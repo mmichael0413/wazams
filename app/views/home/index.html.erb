@@ -1,18 +1,19 @@
 <div id="container">
+  <div class="form_error hidden">Oops! Something went wrong...please try again!</div>
+  <div class="form_success hidden">Success! Your gif is on the way!</div>
+
   <h1 id="title">Wazams</h1>
   <div class="form">
     <%= form_tag(search_messages_path, remote: true) do %>
-      <%= label_tag(:search, "Search for gifs") %>
+      <%= label_tag(:search, "Search for gifs of") %>
       <span><%= text_field_tag(:search, nil, placeholder: 'cute kittens') %></span>
       <%= submit_tag("Search!") %>
     <% end %>
   </div>
   <div id="results"></div>
   <div class="form">
-    <%= form_tag(messages_path, remote: true) do %>
-      <%= label_tag(:phone, "and send them to your friends") %>
-      <span><%= text_field_tag(:phone, nil, placeholder: '555-555-5555') %></span>
-      <%= submit_tag("Wazam!") %>
-    <% end %>
+    <%= label_tag(:phone, "and send them to your friends") %>
+    <span><%= text_field_tag(:phone, nil, placeholder: '555-555-5555') %></span>
+    <%= submit_tag("Wazam!", id: 'message_submit') %>
   </div>
 </div>

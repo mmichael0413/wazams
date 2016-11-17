@@ -34,6 +34,8 @@ input[type="text"] {
 
       img {
         cursor: pointer;
+        max-width: 300px;
+        max-height: 150px;
       }
     }
   }
@@ -42,6 +44,32 @@ input[type="text"] {
     font-family: 'Mrs Sheppards', cursive;
     font-size: 74px;
   }
+}
+
+.form_error {
+  border: 1px solid hsl(0, 100%, 30%);
+  border-radius: 6px;
+  width: 40%;
+  height: 25px;
+  margin: 20px 0px 0px 30%;
+  padding: 8px 0px 1px 10px;
+  color: #940000;
+  background-color: #ffbdbd;
+}
+
+.form_success {
+  border: 1px solid hsl(120, 100%, 30%);
+  border-radius: 6px;
+  width: 40%;
+  height: 25px;
+  margin: 20px 0px 0px 30%;
+  padding: 8px 0px 1px 10px;
+  color: #006600;
+  background-color: #c2ffc2;
+}
+
+.hidden {
+  display: none;
 }
 
 .selected {

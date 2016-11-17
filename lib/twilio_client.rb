@@ -9,7 +9,7 @@ class TwilioClient
 
   def send_message(to, media_url)
     @client.account.messages.create({
-      from: "#{ENV.fetch('TWILIO_FROM_NUMBER')}",
+      from: "+#{ENV.fetch('TWILIO_FROM_NUMBER')}",
       to:   "+1#{to}",
       media_url: media_url
     })
