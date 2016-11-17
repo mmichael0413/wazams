@@ -7,11 +7,11 @@ class TwilioClient
     )
   end
 
-  def send_sms(to, body)
+  def send_message(to, media_url)
     @client.account.messages.create({
       from: "#{ENV.fetch('TWILIO_FROM_NUMBER')}",
       to:   "+1#{to}",
-      body: body
+      media_url: media_url
     })
   rescue => e
     raise StandardError.new(e)

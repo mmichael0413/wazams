@@ -1,0 +1,13 @@
+var imageUrls = JSON.parse("<%= escape_javascript(raw @results) %>");
+var imageTags = '';
+
+$.each(imageUrls, function(index, url) {
+  imageTags += '<span title="Click to select" class="res-image"><img src="' + url + '"></span>';
+  // Make sure newly appended images are clickable
+  $('#results').on('click', 'img', function() {
+    $('#results img').removeClass('selected');
+    $(this).addClass('selected');
+  });
+});
+
+$('#results').html(imageTags);

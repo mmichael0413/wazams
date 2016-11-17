@@ -1,2 +1,18 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="container">
+  <h1 id="title">Wazams</h1>
+  <div class="form">
+    <%= form_tag(search_messages_path, remote: true) do %>
+      <%= label_tag(:search, "Search for gifs") %>
+      <span><%= text_field_tag(:search, nil, placeholder: 'cute kittens') %></span>
+      <%= submit_tag("Search!") %>
+    <% end %>
+  </div>
+  <div id="results"></div>
+  <div class="form">
+    <%= form_tag(messages_path, remote: true) do %>
+      <%= label_tag(:phone, "and send them to your friends") %>
+      <span><%= text_field_tag(:phone, nil, placeholder: '555-555-5555') %></span>
+      <%= submit_tag("Wazam!") %>
+    <% end %>
+  </div>
+</div>

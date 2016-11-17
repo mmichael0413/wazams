@@ -1,13 +1,28 @@
 class MessagesController < ApplicationController
 
   def create
-    message = Message.create(message_params)
+    TwilioClient.new.send_message(sanitized_phone, params[:url])
+    head :ok
+  end
+
+  def search
+    offset = rand(1..10) * 10
+    results = Giphy.search(search_params, { limit: 10, offset: offset })
+    @results = results.map{ |r| r.fixed_height_image.url.to_s }
+    respond_to do |format|
+      format.js   {}
+      format.json { render json: @results }
+    end
   end
 
   private 
 
-  def message_params
-    params.require(:body, :phone)
+  def sanitized_phone
+    params[:phone].gsub(/[^\d]/, '')
+  end
+
+  def search_params
+    params.require(:search)
   end
 
 end

@@ -1,3 +1,72 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div {
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #DCDCDC;
+}
+
+#container {
+  text-align: center;
+
+  .form {
+    margin-bottom: 20px;
+
+    input[type="submit"] {
+      background-color: white;
+      border: none;
+      font-family: 'Mrs Sheppards', cursive;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    span {
+      margin: 10px;
+    }
+  }
+
+  #results {
+    margin-bottom: 20px;
+
+    span {
+      padding: 10px;
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  #title {
+    font-family: 'Mrs Sheppards', cursive;
+    font-size: 74px;
+  }
+}
+
+.selected {
+  border: 5px solid red;
+}
+
+::-webkit-input-placeholder {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
